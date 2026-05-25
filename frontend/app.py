@@ -45,7 +45,6 @@ def clean_ai_tip(tip):
         if tip.startswith(prefix):
             tip = tip.replace(prefix, "", 1).strip()
 
-    # Put each numbered tip on a new line
     tip = re.sub(r"\s*(\d+\.)\s+", r"\n\1 ", tip).strip()
 
     return tip
@@ -146,7 +145,7 @@ date_input = st.date_input(
 month = date_input.strftime("%B")
 year = date_input.year
 
-if st.button("Add Transaction", width="stretch"):
+if st.button("Add Transaction", use_container_width=True):
     if amount > 0 and category and date_input:
         payload = {
             "amount": float(amount),
@@ -210,7 +209,7 @@ try:
 
             st.dataframe(
                 df_display,
-                width="stretch",
+                use_container_width=True,
                 hide_index=True
             )
 
@@ -224,7 +223,7 @@ try:
                 data=full_csv,
                 file_name="fintrack_all_transactions.csv",
                 mime="text/csv",
-                width="stretch"
+                use_container_width=True
             )
 
             # ---------------- Monthly Financial Overview ----------------
@@ -317,7 +316,7 @@ try:
                     data=monthly_csv,
                     file_name=f"fintrack_transactions_{overview_month}_{overview_year}.csv",
                     mime="text/csv",
-                    width="stretch"
+                    use_container_width=True
                 )
 
             else:
@@ -381,7 +380,7 @@ try:
 
             st.dataframe(
                 monthly_summary,
-                width="stretch",
+                use_container_width=True,
                 hide_index=True
             )
 
@@ -395,7 +394,7 @@ try:
                 data=monthly_summary_csv,
                 file_name="fintrack_month_wise_summary.csv",
                 mime="text/csv",
-                width="stretch"
+                use_container_width=True
             )
 
         else:
@@ -444,7 +443,7 @@ with year_col:
         index=year_options.index(current_year)
     )
 
-if st.button("Generate Summary", width="stretch"):
+if st.button("Generate Summary", use_container_width=True):
     try:
         summary_res = requests.post(
             f"{API_URL}/api/summary",
