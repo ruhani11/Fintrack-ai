@@ -333,5 +333,3 @@ PROJECT_URL = "https://fintrack-ai-80no.onrender.com"
 
 This project is created for learning, portfolio, and demonstration purposes.
 
-```
-```
