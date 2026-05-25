@@ -1,6 +1,4 @@
-Paste this full content into `README.md`:
 
-````markdown
 # FinTrack AI – Personal Finance Dashboard
 
 FinTrack AI is a personal finance dashboard that helps users track income, expenses, month-wise summaries, CSV reports, and AI-powered budgeting tips. The project uses a Streamlit frontend, Flask backend, SQLite database, and OpenRouter API for AI-generated financial suggestions.
