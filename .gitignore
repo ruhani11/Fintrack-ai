@@ -1,0 +1,14 @@
+.env
+frontend/.env
+server/.env
+
+__pycache__/
+server/__pycache__/
+
+*.pyc
+
+venv/
+frontend/venv/
+server/venv/
+
+server/database.db
